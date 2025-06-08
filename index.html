@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iron Snout Coffee Roasters - Started by a teen. Crafted like a pro.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-orange: #E06B2C;
+            --dark-charcoal: #1A1A1A;
+            --cream: #FAF6F2;
+            --warm-brown: #6B4423;
+            --sage-green: #7C8471;
+            --white: #FFFFFF;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-charcoal);
+            background-color: var(--cream);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--dark-charcoal);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 100px;
+            padding: 4rem 2rem;
+            text-align: center;
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            color: var(--dark-charcoal);
+            font-weight: 800;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--primary-orange);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--warm-brown);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .hero-description {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            color: var(--dark-charcoal);
+            opacity: 0.8;
+        }
+
+        .cta-button {
+            background-color: var(--primary-orange);
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background-color: #C55A20;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(224, 107, 44, 0.3);
+        }
+
+        /* Coffee Preview Section */
+        .coffee-preview {
+            padding: 4rem 2rem;
+            background-color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--dark-charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--warm-brown);
+            margin-bottom: 3rem;
+        }
+
+        .coffee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .coffee-card {
+            background-color: var(--cream);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .coffee-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .coffee-card h3 {
+            color: var(--primary-orange);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .coffee-card .roast-type {
+            color: var(--warm-brown);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .coffee-card p {
+            color: var(--dark-charcoal);
+            margin-bottom: 1.5rem;
+        }
+
+        .coming-soon {
+            display: inline-block;
+            background-color: var(--sage-green);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Story Teaser */
+        .story-teaser {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .story-content h2 {
+            font-size: 2.5rem;
+            color: var(--dark-charcoal);
+            margin-bottom: 2rem;
+        }
+
+        .story-content p {
+            font-size: 1.2rem;
+            color: var(--dark-charcoal);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: var(--dark-charcoal);
+            color: var(--cream);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact a {
+            color: var(--primary-orange);
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-charcoal);
+            color: var(--cream);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid var(--warm-brown);
+        }
+
+        .footer-tagline {
+            font-style: italic;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .coffee-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Logo Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero > * {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .hero > *:nth-child(1) { animation-delay: 0.1s; }
+        .hero > *:nth-child(2) { animation-delay: 0.2s; }
+        .hero > *:nth-child(3) { animation-delay: 0.3s; }
+        .hero > *:nth-child(4) { animation-delay: 0.4s; }
+        .hero > *:nth-child(5) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="Iron Snout Coffee Roasters">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#coffee">Coffee</a></li>
+                <li><a href="#story">Our Story</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Iron Snout Coffee Roasters</h1>
+        <p class="tagline">Started by a teen. Crafted like a pro.</p>
+        <p class="subtitle">My college fund, one cup at a time</p>
+        <p class="hero-description">
+            What happens when a teenager decides to start a coffee business? 
+            Surprisingly good coffee. And a story worth sharing.
+        </p>
+        <a href="#coffee" class="cta-button">Explore Our Coffee</a>
+    </section>
+
+    <section id="coffee" class="coffee-preview">
+        <div class="container">
+            <h2 class="section-title">Our Coffee</h2>
+            <p class="section-subtitle">Small batch. Big dreams. Really good coffee.</p>
+            
+            <div class="coffee-grid">
+                <div class="coffee-card">
+                    <h3>The Daily Grind</h3>
+                    <p class="roast-type">Medium Roast</p>
+                    <p>Our flagship brew. Sweet, smooth, and perfectly balanced. This is the coffee that started a business.</p>
+                    <span class="coming-soon">Coming Soon</span>
+                </div>
+                
+                <div class="coffee-card">
+                    <h3>Night Hog</h3>
+                    <p class="roast-type">Dark Roast</p>
+                    <p>Bold, rich, and unapologetically strong. For those who take their coffee as seriously as their dreams.</p>
+                    <span class="coming-soon">Coming Soon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="story" class="story-teaser">
+        <div class="story-content">
+            <h2>The Story Behind the Snout</h2>
+            <p>
+                When your teenager says they want to major in business, most parents buy them a book. 
+                We bought a coffee roaster.
+            </p>
+            <p>
+                Now we're here, turning homework into housework, one perfectly roasted batch at a time. 
+                It's a story about family, entrepreneurship, and really good coffee.
+            </p>
+            <p style="color: var(--primary-orange); font-weight: 600;">
+                Full story coming soon...
+            </p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <p>Questions? Want to know when we launch? Just want to say hi?</p>
+        <p style="margin-top: 1rem;">
+            <a href="mailto:ironsnoutcoffee@gmail.com">ironsnoutcoffee@gmail.com</a>
+        </p>
+    </section>
+
+    <footer>
+        <p class="footer-tagline">"Proof that teenagers can do more than just drink coffee"</p>
+        <p>&copy; 2024 Iron Snout Coffee Roasters | San Clemente, CA</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 100;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
